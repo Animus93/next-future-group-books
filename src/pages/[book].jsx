@@ -4,6 +4,7 @@ import { fetchBookData } from "@/api/service";
 
 
 export const getServerSideProps = async (context) => {
+  try{
   const {book} = context.params;
   const response = await fetchBookData(book);
   if(!response) {
@@ -12,6 +13,11 @@ export const getServerSideProps = async (context) => {
   return {props: {
     book: response
   }}
+} catch {
+  return {props: {
+    book: null
+  }}
+}
 }
 
 export default function Book({book}) {
