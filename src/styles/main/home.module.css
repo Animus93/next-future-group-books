@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-rows: 46px auto;
+  grid-row-gap: 16px;
+}
+.count {
+  align-self: center;
+  justify-self: center;
+}
+.content {
+  width: 1fr;
+  height: fit-content ;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 227px);
+  grid-template-rows: repeat(auto-fill, 350px);
+  grid-column-gap: 42px;
+  grid-row-gap: 27px;
+}
+.loadMore {
+  width: 100px;
+  justify-self: center;
+  margin: 20px 0;
+  background: none;
+  color: rgb(42, 117, 202);
+  font-size: large;
+  font-weight: bold;
+  border: 1px solid rgb(42, 117, 202);
+  cursor: pointer;
+}
+.loadMore:hover {
+  transition: .3s;
+  scale: 1.3;
+}
+
+@media (max-width: 680px) {
+  .count {
+    padding-top: 50px;
+    text-align: center;
+  }
+}

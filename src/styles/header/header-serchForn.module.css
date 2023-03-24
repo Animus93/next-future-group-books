@@ -1,0 +1,40 @@
+.serchForm {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    justify-self: center;
+    height: 35px;
+    display: flex;
+  }
+  .input {
+    all:initial;
+    padding-left: 5px;
+    font-weight:bold ;
+    border: none;
+    width: 450px;
+    height: 100%;
+    background-color: rgb(252, 252, 252);
+  }
+  
+  .btn {
+    all:initial;
+    height: 100%;
+    width: 35px;
+    border: none;
+    background-color: rgb(252, 252, 252);
+    background-image: url("../../../public/img/serch-icon.svg");
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .btn:hover {
+    transition: .1s;
+    background-size: 30px;
+  }
+  @media (max-width: 680px) {
+    .input {
+      width: 240px;
+      height: 100%;
+      background-color: rgb(252, 252, 252);
+    }
+  }
