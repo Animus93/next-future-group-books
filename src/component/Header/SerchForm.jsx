@@ -35,8 +35,11 @@ export default function SerchForm() {
     //если поисковая строка не пустая идет запрос за данными
     async function getBooks() {
       if (serchRequest !== "") {
+        // показываем лоадер перед анчалом запроса
         dispatch(loader(true));
         const data = await fetchData(requestParams);
+        // убераем лоадер при режект или реслове
+        dispatch(loader(false));
         if (data.items?.length) {
           dispatch(result(data.items));
           dispatch(totalResult(data.totalItems));

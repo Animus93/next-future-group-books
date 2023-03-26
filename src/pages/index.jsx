@@ -20,18 +20,19 @@ export default function Home() {
     e.preventDefault();
 
     async function getBooks() {
-      dispatch(loader(true));
       if (serchRequest !== "") {
-        dispatch(pageIndex(index + 30));
-        const newData = await fetchData(requestParams);
-        if (newData.items?.length) {
-          const prepareNewState = data.concat(newData.items);
-          console.log(prepareNewState);
-          dispatch(result(prepareNewState));
+          dispatch(loader(true));
+          dispatch(pageIndex(index + 30));
+          const newData = await fetchData(requestParams);
           dispatch(loader(false));
-          return;
+          if (newData.items?.length) {
+            const prepareNewState = data.concat(newData.items);
+            console.log(prepareNewState);
+            dispatch(result(prepareNewState));
+            dispatch(loader(false));
+            return;
+          }
         }
-      }
     }
     getBooks();
   }
